@@ -14,7 +14,7 @@ func Registro(ctx context.Context) models.RespApi {
 	var r models.RespApi
 	r.Status = 400
 
-	fmt.Println("Entre un registro")
+	fmt.Println("Entre a registro")
 
 	body := ctx.Value(models.Key("body")).(string)
 	err := json.Unmarshal([]byte(body), &t)
@@ -52,7 +52,7 @@ func Registro(ctx context.Context) models.RespApi {
 	}
 
 	if !status {
-		r.Message = "No se ha logrado insertar el registro de usuario  " + err.Error()
+		r.Message = "No se ha logrado insertar el registro de usuario  "
 		fmt.Println(r.Message)
 		return r
 	}
